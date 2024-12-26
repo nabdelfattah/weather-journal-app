@@ -1,0 +1,272 @@
+/* variables */
+:root {
+  --color-black: rgb(32, 19, 53);
+  --color-white: #fffded;
+  --color-dark-blue: #4f4789;
+  --color-light-blue: #a4bef3;
+  --color-accent: #f0921b;
+  --color-accent-tint: #be3e00;
+
+  --radius-sm: 4px;
+  --radius-lg: 6px;
+
+  --shadow: 0 1.2rem 3.2rem rgba(32, 19, 53, 0.06);
+  --shadow-sm: 0 1.2rem 3.2rem rgba(26, 31, 13, 0.03);
+
+  --timing-animation: 0.3s;
+}
+/* ********************************************* */
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.3rem rgba(49, 37, 90, 0.5);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
+  background: url(../assets/images/bg-morning.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  backdrop-filter: blur(10px);
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  overflow-x: hidden;
+  height: 100vh;
+  padding-bottom: 6rem;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: all var(--timing-animation);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  color: var(--color-dark-blue);
+  background-color: transparent;
+  border: none;
+  resize: vertical;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: var(--color-dark-blue);
+  border-radius: var(--radius-sm);
+}
+
+input::placeholder {
+  font-size: inherit;
+  color: var(--color-dark-blue);
+}
+/* ********************************************* */
+.container {
+  width: 100%;
+  max-width: 120rem;
+  padding: 0 4rem;
+  margin: 0 auto;
+}
+
+.heading-primary {
+  font-size: 4.4rem;
+}
+
+.heading-secondary {
+  font-size: 3.4rem;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.2rem;
+}
+
+.btn {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  padding: 1.2rem 2.4rem;
+  color: var(--color-white);
+  background-color: var(--color-dark-blue);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--timing-animation);
+  margin-top: 2.8rem;
+}
+
+.btn:hover {
+  color: var(--color-white);
+  background-color: var(--color-accent-tint);
+}
+/* ********************************************* */
+/* components */
+.header {
+  display: flex;
+  align-items: flex-end;
+  padding: 7rem 0 4rem;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2.6rem;
+}
+
+.logo {
+  height: 9rem;
+}
+
+.main .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 4rem;
+}
+
+.input-section,
+.info-display-section {
+  width: 90%;
+  padding: 6rem 4rem 4rem;
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 253, 237, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#zip,
+#feelings {
+  height: 100%;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  border-bottom: 1px solid var(--color-dark-blue);
+  transition: all var(--timing-animation);
+}
+
+#zip:focus,
+#feelings:focus {
+  border-bottom: 1px solid var(--color-light-blue);
+  box-shadow: none;
+}
+
+.entryHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.value {
+  font-weight: 400;
+  color: var(--color-dark-blue);
+  margin: 1rem;
+}
+/**************************/
+/* BELOW 1200px (Landscape Tablets) */
+/**************************/
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .main .container {
+    gap: 2rem;
+    width: 100%;
+  }
+}
+
+/**************************/
+/* BELOW 944px (Tablets) */
+/**************************/
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+
+  .main .container {
+    grid-template-columns: 1fr;
+    gap: 7rem;
+  }
+
+  .input-section,
+  .info-display-section {
+    backdrop-filter: blur(7px);
+    background-color: rgba(255, 253, 237, 0.5);
+  }
+}
+
+/**************************/
+/* BELOW 592px (Phones) */
+/**************************/
+@media (max-width: 37em) {
+  .logo-wrapper {
+    gap: 1rem;
+  }
+
+  .logo {
+    height: 5rem;
+  }
+
+  .heading-primary {
+    font-size: 3rem;
+    letter-spacing: -0.4px;
+  }
+
+  .heading-secondary {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  #zip,
+  #feelings {
+    font-size: 1.8rem;
+  }
+}

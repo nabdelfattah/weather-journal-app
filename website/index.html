@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer type="module"></script>
+    <title>Weather Journal App</title>
+  </head>
+
+  <body class="body">
+    <header class="header">
+      <div class="container logo-wrapper">
+        <img class="logo" src="./assets/images/logo.svg" alt="website logo" />
+        <h1 class="heading-primary">Weather Journal App</h1>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="input-section">
+          <form action="post" class="user-form">
+            <div class="input-wrapper">
+              <label class="title" for="zip">Enter Zipcode here</label>
+              <input
+                type="text"
+                name="zip"
+                id="zip"
+                placeholder="Enter zip code here"
+              />
+            </div>
+            <div class="input-wrapper">
+              <label class="title" for="feelings">
+                How are you feeling today?
+              </label>
+              <textarea
+                name="feelings"
+                id="feelings"
+                rows="1"
+                maxlength="200"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn" id="generate">Generate</button>
+          </form>
+        </div>
+
+        <section class="info-display-section">
+          <header>
+            <h2 class="heading-secondary">Most Recent Entry</h2>
+          </header>
+          <div id="entryHolder" class="entryHolder">
+            <div>
+              <p class="title">Date:<span id="date" class="value"></span></p>
+            </div>
+            <div>
+              <p class="title">
+                Temperature<span id="temp" class="value"></span>
+              </p>
+            </div>
+            <div>
+              <p class="title">
+                Your feelings:<span id="content" class="value"></span>
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
